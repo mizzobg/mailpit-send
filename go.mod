@@ -1,4 +1,4 @@
-module github.com/axllent/mailpit
+module mailpit-send
 
 go 1.23.0
 
