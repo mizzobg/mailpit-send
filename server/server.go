@@ -188,6 +188,8 @@ func apiRoutes() *mux.Router {
 	// return blank 200 response for OPTIONS requests for CORS
 	r.PathPrefix(config.Webroot + "api/v1/").Handler(middleWareFunc(apiv1.GetOptions)).Methods("OPTIONS")
 
+	r.HandleFunc(config.Webroot+"api/v1/message/{id}/reply", middleWareFunc(apiv1.ReplyMessageHandler)).Methods("POST")
+
 	return r
 }
 
